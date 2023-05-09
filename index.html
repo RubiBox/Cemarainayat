@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Front Camera Example</title>
+    <script type="text/javascript">const videoElement = document.getElementById("camera-feed");
+    
+    // Access front camera
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } })
+    .then(stream => {
+    videoElement.srcObject = stream;
+    })
+    .catch(error => {
+    console.error("Error accessing camera:", error);
+    });
+    </script>
+  </head>
+  <body>
+    <video id="camera-feed" autoplay></video>
+  </body>
+</html>
